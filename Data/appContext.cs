@@ -23,7 +23,7 @@ namespace mvcCrud.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlite();
+                optionsBuilder.UseSqlite("Data Source=app.db");
             }
         }
 
