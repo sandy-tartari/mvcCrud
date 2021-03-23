@@ -15603,6 +15603,11 @@
   "RootNamespace": "mvcCrud",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Pessoa\\Index.cshtml",
+      "TargetPath": "Views\\Pessoa\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
