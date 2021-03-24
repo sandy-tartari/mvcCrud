@@ -21,5 +21,17 @@ namespace mvcCrud.Controllers
             IList<Pessoa> pessoass = _context.pessoas.ToList();
             return View(pessoass);
         }
+
+        public IActionResult Novo ()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Novo ([Bind("Id,Nome,Nascimento,Email")] Pessoa novaPessoa)
+        {
+            _context.pessoas.Add(novaPessoa);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

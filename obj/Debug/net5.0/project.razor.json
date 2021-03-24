@@ -15628,6 +15628,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Pessoa\\Novo.cshtml",
+      "TargetPath": "Views\\Pessoa\\Novo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"

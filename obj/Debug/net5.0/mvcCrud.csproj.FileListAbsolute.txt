@@ -94,3 +94,4 @@ C:\Users\sandy\OneDrive\Documentos\Escola\DSIII\mvcCrud\obj\Debug\net5.0\ref\mvc
 C:\Users\sandy\OneDrive\Documentos\Escola\DSIII\mvcCrud\obj\Debug\net5.0\mvcCrud.pdb
 C:\Users\sandy\OneDrive\Documentos\Escola\DSIII\mvcCrud\obj\Debug\net5.0\mvcCrud.genruntimeconfig.cache
 C:\Users\sandy\OneDrive\Documentos\Escola\DSIII\mvcCrud\obj\Debug\net5.0\Razor\Views\Pessoa\Index.cshtml.g.cs
+C:\Users\sandy\OneDrive\Documentos\Escola\DSIII\mvcCrud\obj\Debug\net5.0\Razor\Views\Pessoa\Novo.cshtml.g.cs
