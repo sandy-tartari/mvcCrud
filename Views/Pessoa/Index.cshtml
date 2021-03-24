@@ -1,5 +1,26 @@
+@model IList<mvcCrud.Models.DB.Pessoa>
 @{
     ViewData["Title"] = "Cadastro de pessoas";
 }
 
-<h1>Controller de pessoas OK</h1>
+@* <h1>Controller de pessoas OK</h1> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Nascimento</th>
+            <th>E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (mvcCrud.Models.DB.Pessoa pessoa in Model) {
+    <tr>
+        <td>@Html.DisplayFor(modelPessoa => pessoa.Id)</td>
+        <td>@Html.DisplayFor(modelPessoa => pessoa.Nome)</td>
+        <td>@Html.DisplayFor(modelPessoa => pessoa.Nascimento)</td>
+        <td>@Html.DisplayFor(modelPessoa => pessoa.Email)</td>
+    </tr>
+}
+    </tbody>
+</table>

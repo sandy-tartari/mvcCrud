@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using mvcCrud.Data;
+using mvcCrud.Models.DB;
 
 namespace mvcCrud.Controllers
 {
@@ -8,13 +11,15 @@ namespace mvcCrud.Controllers
     {
         private readonly ILogger<PessoaController> _logger;
         private readonly appContext _context;
-        public PessoaController(ILogger<PessoaController> logger)
+        public PessoaController(ILogger<PessoaController> logger, appContext context)
         {
             _logger = logger;
+            _context = context;
         }
         public IActionResult Index()
         {
-            return View();
+            IList<Pessoa> pessoass = _context.pessoas.ToList();
+            return View(pessoass);
         }
     }
 }
