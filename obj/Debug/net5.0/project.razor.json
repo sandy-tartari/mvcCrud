@@ -15608,6 +15608,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Pessoa\\Edit.cshtml",
+      "TargetPath": "Views\\Pessoa\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -15628,13 +15633,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Pessoa\\Novo.cshtml",
-      "TargetPath": "Views\\Pessoa\\Novo.cshtml",
+      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Pessoa\\Delete.cshtml",
+      "TargetPath": "Views\\Pessoa\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Pessoa\\Create.cshtml",
+      "TargetPath": "Views\\Pessoa\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15645,6 +15655,11 @@
     {
       "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\sandy\\OneDrive\\Documentos\\Escola\\DSIII\\mvcCrud\\Views\\Pessoa\\Details.cshtml",
+      "TargetPath": "Views\\Pessoa\\Details.cshtml",
       "FileKind": "mvc"
     }
   ],

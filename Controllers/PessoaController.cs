@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using mvcCrud.Data;
 using mvcCrud.Models.DB;
 
@@ -9,29 +12,142 @@ namespace mvcCrud.Controllers
 {
     public class PessoaController : Controller
     {
-        private readonly ILogger<PessoaController> _logger;
         private readonly appContext _context;
-        public PessoaController(ILogger<PessoaController> logger, appContext context)
+
+        public PessoaController(appContext context)
         {
-            _logger = logger;
             _context = context;
         }
-        public IActionResult Index()
+
+        // GET: Pessoa
+        public async Task<IActionResult> Index()
         {
-            IList<Pessoa> pessoass = _context.pessoas.ToList();
-            return View(pessoass);
+            return View(await _context.pessoas.ToListAsync());
         }
 
-        public IActionResult Novo ()
+        // GET: Pessoa/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var pessoa = await _context.pessoas
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (pessoa == null)
+            {
+                return NotFound();
+            }
+
+            return View(pessoa);
+        }
+
+        // GET: Pessoa/Create
+        public IActionResult Create()
         {
             return View();
         }
+
+        // POST: Pessoa/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public IActionResult Novo ([Bind("Id,Nome,Nascimento,Email")] Pessoa novaPessoa)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Nome,Nascimento,Email")] Pessoa pessoa)
         {
-            _context.pessoas.Add(novaPessoa);
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Add(pessoa);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(pessoa);
+        }
+
+        // GET: Pessoa/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var pessoa = await _context.pessoas.FindAsync(id);
+            if (pessoa == null)
+            {
+                return NotFound();
+            }
+            return View(pessoa);
+        }
+
+        // POST: Pessoa/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Nascimento,Email")] Pessoa pessoa)
+        {
+            if (id != pessoa.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(pessoa);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PessoaExists(pessoa.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(pessoa);
+        }
+
+        // GET: Pessoa/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var pessoa = await _context.pessoas
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (pessoa == null)
+            {
+                return NotFound();
+            }
+
+            return View(pessoa);
+        }
+
+        // POST: Pessoa/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var pessoa = await _context.pessoas.FindAsync(id);
+            _context.pessoas.Remove(pessoa);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool PessoaExists(int id)
+        {
+            return _context.pessoas.Any(e => e.Id == id);
         }
     }
 }
